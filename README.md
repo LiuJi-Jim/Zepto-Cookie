@@ -1,5 +1,13 @@
 # Zepto Cookie Plugin
 
+Modified by LiuJi-Jim
+
+**Move the total API from $.fn.cookie to $.cookie**
+
+**Change the `expires` parameter from `days` to `minutes`**
+
+# Zepto Cookie Plugin
+
 A simple plugin to read, set, and delete cookies. This plugin extends [Zepto.js](https://github.com/madrobby/zepto) with a `$.cookie` method.
 
 It is a modification of the [jQuery-Cookie](https://github.com/carhartl/jquery-cookie) plugin made to work with Zepto.

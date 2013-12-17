@@ -8,9 +8,10 @@
 // http://www.opensource.org/licenses/mit-license.php
 // http://www.gnu.org/licenses/gpl.html
 ;(function($){
-    $.extend($.fn, {
+    $.extend($, {
         cookie : function (key, value, options) {
-            var days, time, result, decode
+            //var days, time, result, decode
+            var minutes, time, result, decode
 
             // A key and value were given. Set cookie.
             if (arguments.length > 1 && String(value) !== "[object Object]") {
@@ -20,10 +21,12 @@
                 if (value === null || value === undefined) options.expires = -1
 
                 if (typeof options.expires === 'number') {
-                    days = (options.expires * 24 * 60 * 60 * 1000)
+                    //days = (options.expires * 24 * 60 * 60 * 1000)
+                    minutes = (options.expires * 60 * 1000)
                     time = options.expires = new Date()
 
-                    time.setTime(time.getTime() + days)
+                    //time.setTime(time.getTime() + days)
+                    time.setTime(time.getTime() + minutes)
                 }
 
                 value = String(value)
