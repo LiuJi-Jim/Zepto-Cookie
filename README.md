@@ -6,6 +6,56 @@ Modified by LiuJi-Jim
 
 **Change the `expires` parameter from `days` to `minutes`**
 
+## 用途
+
+大概这么用: `$.cookie(key, value, options);`
+
+`key` (string), 读/写的cookie名。
+
+`value` (string), 写的cookie值。
+
+`options` (object), 附加参数，如过期时间、路径、域名等。
+
+
+## 例子
+
+`$.cookie('foo', 'bar');`
+
+写一个名为`foo`的cookie，值为`bar`。
+
+`$.cookie('foo');`
+
+读一个cookie。如果在第一个例子之后运行，应该返回`bar`。如果cookie不存在，返回`null`。
+
+`$.cookie('foo', 'bar', { expires: 30 });`
+
+写名为`foo`的cookie，值为`bar`，设置过期时间为30分钟。
+
+## Options
+
+The `options` argument is an object which supports the following properties:
+`options`参数是一个对象，支持如下属性：
+
+`{ expires : 30 }`
+
+cookie的生命周期（分钟）。接收整数，默认生命周期为Session。
+
+`{ path: '/foo' }`
+
+cookie的有效路径。如果不指定，则默认为cookie所被设置时的当前路径。
+
+`{ domain: 'example.com' }`
+
+cookie的有效域名。如果不指定，则默认为cookie所被设置时的当前域名。
+
+`{ secure: true }`
+
+指定该cookie是否需要HTTPS，默认为false。
+
+`{ raw: true }`
+
+指定该cookie是否**不**被URI encode，默认为false。
+
 # Zepto Cookie Plugin
 
 A simple plugin to read, set, and delete cookies. This plugin extends [Zepto.js](https://github.com/madrobby/zepto) with a `$.cookie` method.
