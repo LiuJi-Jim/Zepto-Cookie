@@ -31,6 +31,10 @@ Modified by LiuJi-Jim
 
 写名为`foo`的cookie，值为`bar`，设置过期时间为30分钟。
 
+`$.cookie('foo', { raw: true });`
+
+读名为`foo`的cookie，并返回不经过`encodeURIComponent`的值。
+
 ## Options
 
 The `options` argument is an object which supports the following properties:
