@@ -11,7 +11,7 @@
     $.extend($, {
         cookie : function (key, value, options) {
             //var days, time, result, decode
-            var minutes, time, result, decode
+            var milliseconds, time, result, decode
 
             // A key and value were given. Set cookie.
             if (arguments.length > 1 && String(value) !== "[object Object]") {
@@ -21,12 +21,10 @@
                 if (value === null || value === undefined) options.expires = -1
 
                 if (typeof options.expires === 'number') {
-                    //days = (options.expires * 24 * 60 * 60 * 1000)
-                    minutes = (options.expires * 60 * 1000)
+                    milliseconds = options.expires
                     time = options.expires = new Date()
 
-                    //time.setTime(time.getTime() + days)
-                    time.setTime(time.getTime() + minutes)
+                    time.setTime(time.getTime() + milliseconds)
                 }
 
                 value = String(value)

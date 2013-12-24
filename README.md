@@ -27,7 +27,7 @@ Modified by LiuJi-Jim
 
 读一个cookie。如果在第一个例子之后运行，应该返回`bar`。如果cookie不存在，返回`null`。
 
-`$.cookie('foo', 'bar', { expires: 30 });`
+`$.cookie('foo', 'bar', { expires: 30 * 60 * 1000 });`
 
 写名为`foo`的cookie，值为`bar`，设置过期时间为30分钟。
 
@@ -40,9 +40,9 @@ Modified by LiuJi-Jim
 The `options` argument is an object which supports the following properties:
 `options`参数是一个对象，支持如下属性：
 
-`{ expires : 30 }`
+`{ expires : 30 * 60 * 1000 }`
 
-cookie的生命周期（分钟）。接收整数，默认生命周期为Session。
+cookie的生命周期（毫秒）。接收整数，默认生命周期为Session。
 
 `{ path: '/foo' }`
 
@@ -58,7 +58,7 @@ cookie的有效域名。如果不指定，则默认为cookie所被设置时的�
 
 `{ raw: true }`
 
-指定该cookie是否**不**被URI encode，默认为false。
+指定该cookie是否**不**被URI encode/decode，默认为false。
 
 # Zepto Cookie Plugin
 
